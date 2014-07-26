@@ -6,7 +6,7 @@ tabataApp.config(['$routeProvider',
         $routeProvider.
             when('/', {
                 templateUrl: 'view/home.html',
-                controller: ''
+                controller: 'exerciseCtrl'
             }).
             when('/phones/:phoneId', {
                 templateUrl: 'partials/phone-detail.html',

@@ -1,5 +1,7 @@
 <div class="list list-inset">
+
     <form class="pure-form">
+
         <fieldset class="pure-group">
             <input type="text" class="pure-input-1-1" placeholder="Name">
         </fieldset>
@@ -8,8 +10,20 @@
             <input type="text" class="pure-input-1-1" placeholder="Surname">
         </fieldset>
 
-        <button class="button button-energized">
-            Submit
+        <fieldset class="pure-group">
+            <a data-ng-click="addExercise()">Add exercise</a>
+        </fieldset>
+
+        <fieldset class="pure-group">
+            <div data-ng-repeat="exercise in exercises">
+                <input type="text" class="pure-input-1-1" name="{{exercise.name}}" placeholder="{{exercise.exercisePlaceholder}}">
+            </div>
+        </fieldset>
+
+        <button class="button button-block button-energized">
+            Block Button
         </button>
+
     </form>
+
 </div>
