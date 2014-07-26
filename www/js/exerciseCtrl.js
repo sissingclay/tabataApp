@@ -1,15 +1,32 @@
 tabataApp.controller('exerciseCtrl', ['$scope', function($scope){
 
     $scope.exercises    = [];
-    var count           = 1;
+    $scope.count        = 1;
+    $scope.showRemove   = false;
+
+    $scope.$watch('count', function() {
+        if($scope.count>5){
+            $scope.showRemove = true;
+        } else {
+            $scope.showRemove = false;
+        }
+    });
+
     $scope.addExercise  = function () {
 
         $scope.exercises.push({
-            exercisePlaceholder: "Exercise "+count,
-            name: "exercise"+count
+            exercisePlaceholder: "Exercise "+$scope.count,
+            name: "exercise"+$scope.count
         });
 
-        ++count;
+        ++$scope.count;
+    };
+
+    $scope.removeExercise  = function () {
+
+        $scope.exercises.pop();
+
+        --$scope.count;
     };
 
 }]);
