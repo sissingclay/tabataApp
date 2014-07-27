@@ -1,0 +1,75 @@
+<div class="list list-inset">
+
+    <div class="item item-thumbnail-left">
+        <img src="img/ionic.png">
+        <h2>{{name}}</h2>
+        <p>{{email}}</p>
+    </div>
+    <br />
+    <div class="item item-icon-left">
+        <i class="icon ion-clock"></i>
+        Duration of exercise
+        <span class="badge badge-positive">{{exerciseDuration.count}}s</span>
+    </div>
+
+    <div class="list list-inset">
+        <button class="button button-small button-positive" data-ng-click="exerciseDuration.increment(1)">
+            <i class="icon ion-ios7-plus"></i>
+        </button>
+        <button class="button button-small button-assertive" data-ng-click="exerciseDuration.decrease(1)">
+            <i class="icon ion-ios7-minus"></i>
+        </button>
+    </div>
+
+    <br />
+    <div class="item item-icon-left">
+        <i class="icon ion-shuffle"></i>
+        Duration of break
+        <span class="badge badge-positive">{{exerciseBreak.count}}s</span>
+    </div>
+
+    <div class="list list-inset">
+        <button class="button button-small button-positive" data-ng-click="exerciseBreak.increment(1)">
+            <i class="icon ion-ios7-plus"></i>
+        </button>
+        <button class="button button-small button-assertive" data-ng-click="exerciseBreak.decrease(1)">
+            <i class="icon ion-ios7-minus"></i>
+        </button>
+    </div>
+
+    <br />
+    <div class="item item-icon-left">
+        <i class="icon ion-loop"></i>
+        Repeat exercises
+        <span class="badge badge-positive">{{exerciseRepeat.count}}</span>
+    </div>
+
+    <div class="list list-inset">
+        <button class="button button-small button-positive" data-ng-click="exerciseRepeat.increment(1)">
+            <i class="icon ion-ios7-plus"></i>
+        </button>
+        <button class="button button-small button-assertive" data-ng-click="exerciseRepeat.decrease(1)">
+            <i class="icon ion-ios7-minus"></i>
+        </button>
+    </div>
+
+    <button class="button button-block button-positive" data-ng-disabled="(startup.$invalid && !isExerciseAdded)">
+        Start exercise
+    </button>
+
+    <div class="list">
+
+        <div class="item item-icon-left" data-ng-repeat="exercise in exercisesData">
+            <i class="icon ion-ios7-circle-filled"></i>
+            {{exercise.text}}
+            <span class="item-note">
+              <strong>Time:</strong>
+              <span class="positive">{{exerciseDuration.count}}s</span>
+              <strong>To complete:</strong>
+              <span class="positive">{{exerciseRepeat.count}}</span>
+            </span>
+        </div>
+
+    </div>
+
+</div>

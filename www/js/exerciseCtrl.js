@@ -1,6 +1,6 @@
 'use strict';
 
-tabataApp.controller('exerciseCtrl', ['$scope', '$log', '$cookieStore', function($scope,$log,$cookieStore){
+tabataApp.controller('exerciseCtrl', ['$scope', '$log', '$cookieStore', '$location', function($scope,$log,$cookieStore,$location){
 
     $scope.exercises        = [];
     $scope.count            = 1;
