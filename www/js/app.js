@@ -6,7 +6,7 @@
 
 'use strict';
 
-var tabataApp = angular.module('starter', ['ionic', 'ngRoute', 'ngCookies'])
+var tabataApp = angular.module('starter', ['ionic', 'ngRoute', 'ngCookies', 'ui.gravatar'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
