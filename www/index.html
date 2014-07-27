@@ -20,7 +20,8 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="lib/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/route.js"></script>
     <script src="js/exerciseCtrl.js"></script>
@@ -29,7 +30,7 @@
 
     <div class="row">
         <div class="col">
-            <div class="bar bar-header bar-balanced">
+            <div class="bar bar-header bar-dark">
                 <h1 class="title">Tabata <i class="icon ion-ios7-cog"></i></h1>
             </div>
         </div>
@@ -37,7 +38,7 @@
 
     <div ng-view class="padding-vertical"></div>
 
-    <div class="bar bar-footer bar-balanced">
+    <div class="bar bar-footer bar-dark">
         <div class="title"></div>
     </div>
 

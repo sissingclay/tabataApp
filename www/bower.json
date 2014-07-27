@@ -3,6 +3,7 @@
     "private": "true",
     "devDependencies": {
         "ionic": "driftyco/ionic-bower#1.0.0-beta.10",
-        "angular-route": "~1.2.x"
+        "angular-route": "~1.2.x",
+        "angular-cookies": "1.2.17"
     }
 }

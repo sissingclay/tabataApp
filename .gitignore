@@ -1,1 +1,4 @@
 www/lib
+bower_components
+www/bower_components
+.idea

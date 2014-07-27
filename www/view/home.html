@@ -1,28 +1,26 @@
 <div class="list list-inset">
 
-    <form class="pure-form">
+    <form novalidate class="pure-form" name="startup" data-ng-submit="submitForm(startup.$valid)">
 
         <fieldset class="pure-group">
-            <input type="text" class="pure-input-1-1" placeholder="Name">
+            <input type="text" class="pure-input-1-1" placeholder="Name" data-ng-model="startup.name" required>
+            <input type="text" class="pure-input-1-1" placeholder="Surname" data-ng-model="startup.surname" required>
+            <input type="email" class="pure-input-1-1" placeholder="Email address" data-ng-model="startup.email" required>
         </fieldset>
 
         <fieldset class="pure-group">
-            <input type="text" class="pure-input-1-1" placeholder="Surname">
-        </fieldset>
-
-        <fieldset class="pure-group">
-            <a href="" data-ng-click="addExercise()">Add exercise</a>
-            <a href="" data-ng-click="removeExercise()" data-ng-show="showRemove">Remove exercise</a>
+            <a class="button button-small button-positive" href="" data-ng-click="addExercise()">Add exercise <i class="icon ion-plus-circled"></i></a>
+            <a class="button button-small button-assertive" href="" data-ng-click="removeExercise()" data-ng-show="showRemove">Remove exercise <i class="icon ion-minus-circled"></i></a>
         </fieldset>
 
         <fieldset class="pure-group">
             <div data-ng-repeat="exercise in exercises">
-                <input type="text" class="pure-input-1-1" name="{{exercise.name}}" placeholder="{{exercise.exercisePlaceholder}}">
+                <input type="text" class="pure-input-1-1" name="exercise.name" data-ng-model="exercise.text" placeholder="{{exercise.exercisePlaceholder}}" required>
             </div>
         </fieldset>
 
-        <button class="button button-block button-energized">
-            Block Button
+        <button class="button button-block button-positive" data-ng-disabled="(startup.$invalid && !isExerciseAdded)">
+            Next
         </button>
 
     </form>

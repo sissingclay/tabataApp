@@ -1,6 +1,9 @@
 /**
  * Created by clay on 26/07/14.
  */
+
+'use strict';
+
 tabataApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
@@ -8,9 +11,9 @@ tabataApp.config(['$routeProvider',
                 templateUrl: 'view/home.html',
                 controller: 'exerciseCtrl'
             }).
-            when('/phones/:phoneId', {
-                templateUrl: 'partials/phone-detail.html',
-                controller: 'PhoneDetailCtrl'
+            when('/settings', {
+                templateUrl: 'view/settings.html',
+                controller: 'settingsCtrl'
             }).
             otherwise({
                 redirectTo: '/'
