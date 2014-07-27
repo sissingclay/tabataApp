@@ -12,15 +12,18 @@ tabataApp.controller('settingsCtrl',['$scope', '$cookieStore','$log','counterSer
     $scope.name             = $scope.userData.name + ' ' + $scope.userData.surname;
     $scope.email            = $scope.userData.email;
     $scope.totalTime        = $scope.exerciseDuration.count*$scope.exercisesData.length*$scope.exerciseRepeat.count;
-    $scope.totalTimeMin     = parseFloat($scope.totalTime/60).toFixed(2);
+    $scope.totalTimeMin     = decimalPlaces($scope.totalTime/60);
     $scope.$watch('exerciseDuration', function(newVal, oldVal){
         $scope.totalTime    = $scope.exerciseDuration.count*$scope.exercisesData.length*$scope.exerciseRepeat.count;
-        $scope.totalTimeMin = parseFloat($scope.totalTime/60).toFixed(2);
+        $scope.totalTimeMin = decimalPlaces($scope.totalTime/60);
     }, true);
     $scope.$watch('exerciseRepeat', function(newVal, oldVal){
         $scope.totalTime    = $scope.exerciseDuration.count*$scope.exercisesData.length*$scope.exerciseRepeat.count;
-        $scope.totalTimeMin = parseFloat($scope.totalTime/60).toFixed(2);
+        $scope.totalTimeMin = decimalPlaces($scope.totalTime/60);
     }, true);
+    function decimalPlaces(totalTime){
+        return parseFloat(totalTime).toFixed(2);
+    };
 }]);
 
 tabataApp.service('counterService', [function(){
